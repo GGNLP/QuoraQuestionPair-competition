@@ -1,0 +1,66 @@
+使用方法:
+
+```
+	import pickle
+
+	loaded_file = pickle.load(open('./train_negative_qid_pairs.pkl','rb')) # 因為 pickle 檔是用 raw bytes 儲存，所以 open 要用 rb 或 wb
+
+```
+
+執行完， loaded_file 就直接是可使用的 python object 了，
+可以直接執行 len(loaded_file) , for i in loaded_file 之類的操作
+
+
+*********************************************************************************************
+
+
+qid piars 共計4個檔案:
+
+	train_positive_qid_pairs.pkl : 存 training set 的 non-duplicated qid pairs
+	train_negative_qid_pairs.pkl : 存 training set 的 duplicated qid pairs
+	validation_positive_qid_pairs.pkl : 存 validation set 的 duplicated qid pairs
+	validation_negative_qid_pairs.pkl : 存 validation set 的 non-duplicated qid pairs
+
+儲存格式 EX:
+
+	[
+		[1, 2],
+		[1, 3],
+		[87, 88],
+		[666, 48763],
+		.
+		.
+		.
+	]
+
+where 1,2,3,87,88,666,48763 都是 qid
+
+
+*********************************************************************************************
+
+
+qid question dictionary 共計1個檔案:
+
+	qid_qustion_dict.pkl : 存 qid-raw_question_text 的 python dict
+
+儲存格式 EX:
+
+	{
+		1: 'I am a good programmer!',
+		2: 'But I never write comments LOLOLOLOL',
+		48763: 'What is 星爆氣流斬 ????',
+		.
+		.
+		.
+	}
+
+i.e. key 是 qid ， value 是 raw text
+
+如你所見，存的是 rawtext ，需要自己用 tokenizer 下去再做處理
+
+
+
+*********************************************************************************************
+
+
+source code 在 source_code--do_not_execute 資料夾下，請勿直接執行覆蓋舊有 training/validation set ，之後 ensembling 會出問題 

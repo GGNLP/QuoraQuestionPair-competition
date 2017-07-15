@@ -1,3 +1,21 @@
-dataset/*
-model/*
-result/*
+Kaggle Competition- Quora Question Pairs Solution Report.mp4
+.ipynb_checkpoints
+__pycache__
+dataset/augmented/*.pkl
+dataset/fasttext/*
+dataset/processed/*
+dataset/quora-question-pairs/*
+dataset/spacy_feature_extraction/*.pkl
+dataset/spacy_feature_extraction/*.txt
+dataset/spacy_feature_extraction/*.vec
+dataset/spacy_feature_extraction/*.vec
+dataset/spacy_feature_extraction/fasttext/*
+HubertLin/downloaded_data/*
+HubertLin/features_from_model/*
+HubertLin/leaks_cache/*
+HubertLin/model/*
+HubertLin/model_predictions/*
+HubertLin/prediction/*
+HubertLin/spacy_data/*.pkl
+HubertLin/spacy_data/*.txt
+HubertLin/val/*
